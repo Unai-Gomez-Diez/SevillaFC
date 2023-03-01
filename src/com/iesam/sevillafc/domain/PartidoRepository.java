@@ -10,5 +10,7 @@ public interface PartidoRepository {
 
     public Partido findById(String partidoId);
 
+    public void delete(String partidoId);
+
     public List<Partido> getAll();
 }

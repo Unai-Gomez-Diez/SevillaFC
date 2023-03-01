@@ -25,7 +25,9 @@ public class ArbitroDataRepository implements ArbitroRepository {
     }
 
     @Override
-    public List<Arbitro> getAll() {
-        return this.localDataSource.findAll();
+    public void delete(String arbitroId) {
+        this.localDataSource.delete(arbitroId);
     }
+
+
 }

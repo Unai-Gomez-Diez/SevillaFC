@@ -10,5 +10,5 @@ public interface ArbitroRepository {
 
     public Arbitro findById(String arbitroId);
 
-    public List<Arbitro> getAll();
+    public void delete(String arbitroId);
 }

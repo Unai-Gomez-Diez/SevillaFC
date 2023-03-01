@@ -1,5 +1,6 @@
 package com.iesam.sevillafc.domain.usecase;
 
+import com.iesam.sevillafc.data.EquipoDataRepository;
 import com.iesam.sevillafc.domain.EquipoRepository;
 import com.iesam.sevillafc.domain.models.Equipo;
 import com.iesam.sevillafc.domain.models.Jugador;
@@ -10,7 +11,7 @@ public class GetEquipoUseCase {
 
     private EquipoRepository equipoRepository;
 
-    public void GetEquipoUseCase(EquipoRepository equipoRepository){
+    public GetEquipoUseCase(EquipoRepository equipoRepository){
         this.equipoRepository=equipoRepository;
     }
 

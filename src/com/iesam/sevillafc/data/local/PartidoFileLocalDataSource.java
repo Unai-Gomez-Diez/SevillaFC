@@ -3,6 +3,7 @@ package com.iesam.sevillafc.data.local;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.iesam.sevillafc.domain.models.Arbitro;
+import com.iesam.sevillafc.domain.models.Equipo;
 import com.iesam.sevillafc.domain.models.Partido;
 
 import java.io.File;
@@ -34,7 +35,9 @@ public class PartidoFileLocalDataSource {
         saveToFile(models);
     }
 
-
+    public void saveList(List<Partido> models) {
+        saveToFile(models);
+    }
 
     private void saveToFile(List<Partido> models) {
         try {
@@ -82,7 +85,16 @@ public class PartidoFileLocalDataSource {
         return new ArrayList<>();
     }
 
-
+    public void delete(String partidoId) {
+        List<Partido> newPartidosList = new ArrayList<>();
+        List<Partido> partidos = findAll();
+        for (Partido partido : partidos) {
+            if (partido.getId() != partidoId) {
+                newPartidosList.add(partido);
+            }
+        }
+        saveList(newPartidosList);
+    }
 
     public static PartidoFileLocalDataSource getInstance() {
         if (instance == null) {

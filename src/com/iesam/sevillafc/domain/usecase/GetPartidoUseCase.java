@@ -7,7 +7,7 @@ public class GetPartidoUseCase {
 
     private PartidoRepository partidoRepository;
 
-    public void GetPartidoUseCase(PartidoRepository partidoRepository){
+    public GetPartidoUseCase(PartidoRepository partidoRepository){
         this.partidoRepository=partidoRepository;
     }
 

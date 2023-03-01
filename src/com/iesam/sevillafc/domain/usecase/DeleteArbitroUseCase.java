@@ -1,16 +1,20 @@
 package com.iesam.sevillafc.domain.usecase;
 
+import com.iesam.sevillafc.data.ArbitroDataRepository;
 import com.iesam.sevillafc.domain.ArbitroRepository;
 import com.iesam.sevillafc.domain.models.Arbitro;
 
-public class GetArbitroUseCase {
+public class DeleteArbitroUseCase {
+
     private ArbitroRepository arbitroRepository;
 
-    public GetArbitroUseCase(ArbitroRepository arbitroRepository){
+
+    public DeleteArbitroUseCase(ArbitroRepository arbitroRepository){
         this.arbitroRepository=arbitroRepository;
     }
 
-    public Arbitro execute(String arbitroId){
-        return this.arbitroRepository.findById(arbitroId);
+    public void execute(String arbitroId){
+        this.arbitroRepository.delete(arbitroId);
+
     }
 }

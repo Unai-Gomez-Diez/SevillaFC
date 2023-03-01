@@ -83,6 +83,16 @@ public class EquipoFileLocalDataSource {
         return new ArrayList<>();
     }
 
+    public void delete(String equipoId) {
+        List<Equipo> newEquiposList = new ArrayList<>();
+        List<Equipo> equipos = findAll();
+        for (Equipo equipo : equipos) {
+            if (equipo.getId() != equipoId) {
+                newEquiposList.add(equipo);
+            }
+        }
+        saveList(newEquiposList);
+    }
 
 
     public static EquipoFileLocalDataSource getInstance() {

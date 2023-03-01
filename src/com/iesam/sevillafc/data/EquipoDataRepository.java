@@ -25,7 +25,9 @@ public class EquipoDataRepository implements EquipoRepository {
     }
 
     @Override
-    public List<Equipo> getAll() {
-        return this.localDataSource.findAll();
+    public void delete(String equipoId) {
+        this.localDataSource.delete(equipoId);
     }
+
+
 }

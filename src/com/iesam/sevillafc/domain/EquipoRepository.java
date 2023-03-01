@@ -9,5 +9,7 @@ public interface EquipoRepository {
 
     public Equipo findById(String equipoId);
 
-    public List<Equipo> getAll();
+    public void delete(String equipoId);
+
+
 }

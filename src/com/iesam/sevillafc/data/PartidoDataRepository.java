@@ -25,7 +25,14 @@ public class PartidoDataRepository implements PartidoRepository {
     }
 
     @Override
+    public void delete(String partidoId) {
+    this.localDataSource.delete(partidoId);
+    }
+
+    @Override
     public List<Partido> getAll() {
         return this.localDataSource.findAll();
     }
+
+
 }

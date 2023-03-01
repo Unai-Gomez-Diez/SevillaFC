@@ -34,6 +34,10 @@ public class ArbitroFileLocalDataSource {
         saveToFile(models);
     }
 
+    public void saveList(List<Arbitro> models) {
+        saveToFile(models);
+    }
+
 
 
     private void saveToFile(List<Arbitro> models) {
@@ -83,7 +87,16 @@ public class ArbitroFileLocalDataSource {
     }
 
 
-
+    public void delete(String arbitroId) {
+        List<Arbitro> newArbitrosList = new ArrayList<>();
+        List<Arbitro> arbitros = findAll();
+        for (Arbitro arbitro : arbitros) {
+            if (arbitro.getId() != arbitroId) {
+                newArbitrosList.add(arbitro);
+            }
+        }
+        saveList(newArbitrosList);
+    }
     public static ArbitroFileLocalDataSource getInstance() {
         if (instance == null) {
             instance = new ArbitroFileLocalDataSource();
