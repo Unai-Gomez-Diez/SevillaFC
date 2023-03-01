@@ -1,5 +1,7 @@
 package com.iesam.sevillafc.domain.models;
 
+import com.google.gson.Gson;
+
 public class Partido {
     private String id;
     private Equipo eLocal;
@@ -45,5 +47,9 @@ public class Partido {
 
     public void setFechaPartido(String fechaPartido) {
         this.fechaPartido = fechaPartido;
+    }
+    @Override
+    public String toString() {
+        return new Gson().toJson(this);
     }
 }
